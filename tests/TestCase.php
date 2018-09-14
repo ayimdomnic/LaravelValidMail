@@ -39,9 +39,6 @@ class TestCase extends BaseTestCase
         ];
     }
 
-    /**
-     *
-     */
     public function test_validator()
     {
         $loop = 10;
