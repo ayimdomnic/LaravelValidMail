@@ -6,7 +6,6 @@ use Ayim\LaravelValidMail\LaravelValidMailService;
 
 class LaravelValidMailTest
 {
-
     protected $validator;
 
     public function __construct(LaravelValidMailService $validator)
