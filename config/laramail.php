@@ -3,7 +3,7 @@
  * Created by IntelliJ IDEA.
  * User: ayim
  * Date: 9/14/18
- * Time: 10:40 AM
+ * Time: 10:40 AM.
  */
 return [
     /*
@@ -18,7 +18,7 @@ return [
  |
  */
 
-    'token' => env('TRUMAIL_TOKEN',null),
+    'token' => env('TRUMAIL_TOKEN', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'lang' => env('TRUMAIL_LANG','en_US'),
+    'lang' => env('TRUMAIL_LANG', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------
@@ -49,11 +49,11 @@ return [
     'error_responses' => [
 
         'en_US' => [
-            'format' => 'Invalid email format',
+            'format'   => 'Invalid email format',
             'delivery' => 'Email address not deliverable',
-            'inbox' => 'Email address inbox full',
-            'host' => 'Email address host/domain doesn\'t exist'
-        ]
+            'inbox'    => 'Email address inbox full',
+            'host'     => 'Email address host/domain doesn\'t exist',
+        ],
 
     ],
 
