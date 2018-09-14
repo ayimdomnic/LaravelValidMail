@@ -19,7 +19,16 @@ class LaravelValidMailTest extends TestCase
     public function test_validator()
     {
         $loop = 10;
-        $response = ValidMail::validate($this->getEmail());
+
+        for ($i=0; $i<=$loop; $i++) {
+            $response = ValidMail::validate($this->getEmail());
+            //Test response status code
+            $this->assertEquals(200,$response->status);
+            //Test response
+            $this->assertObjectHasAttribute('status', $response);
+            $this->assertObjectHasAttribute('isValid', $response);
+
+        }
     }
 
     private function getEmail()
