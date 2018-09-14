@@ -3,7 +3,7 @@
  * Created by IntelliJ IDEA.
  * User: ayim
  * Date: 9/14/18
- * Time: 10:43 AM
+ * Time: 10:43 AM.
  */
 
 namespace Ayim\LaravelValidMail;
@@ -14,9 +14,6 @@ class LaravelValidMailServiceProvider extends ServiceProvider
 {
     protected $defer = false;
 
-    /**
-     *
-     */
     public function boot()
     {
         $this->publishes([
@@ -37,6 +34,5 @@ class LaravelValidMailServiceProvider extends ServiceProvider
         $this->app->singleton('LaravelValidMailService', function ($app) {
             return new LaravelValidMailService();
         });
-
     }
 }

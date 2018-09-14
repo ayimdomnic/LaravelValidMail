@@ -2,7 +2,6 @@
 
 namespace Ayim\LaravelValidMail\Tests;
 
-use Ayim\LaravelValidMail\Facades\ValidMail;
 use Ayim\LaravelValidMail\LaravelValidMailService;
 
 class LaravelValidMailTest extends TestCase
@@ -11,17 +10,17 @@ class LaravelValidMailTest extends TestCase
 
     /**
      * LaravelValidMailTest constructor.
-     * @param string|null $name
-     * @param array $data
-     * @param string $dataName
+     *
+     * @param string|null             $name
+     * @param array                   $data
+     * @param string                  $dataName
      * @param LaravelValidMailService $validator
      */
-    public function __construct(string $name = null, array $data = [], string $dataName = '', LaravelValidMailService $validator)
+    public function __construct(string $name = null, array $data, string $dataName, LaravelValidMailService $validator)
     {
         parent::__construct($name, $data, $dataName);
         $this->validator = $validator;
     }
-
 
     public function getPackageProviders($app)
     {
@@ -37,14 +36,13 @@ class LaravelValidMailTest extends TestCase
     {
         $loop = 10;
 
-        for ($i=0; $i<=$loop; $i++) {
+        for ($i = 0; $i <= $loop; $i++) {
             $response = $this->validator->validate($this->getEmail());
             //Test response status code
-            $this->assertEquals(200,$response->status);
+            $this->assertEquals(200, $response->status);
             //Test response
             $this->assertObjectHasAttribute('status', $response);
             $this->assertObjectHasAttribute('isValid', $response);
-
         }
     }
 
@@ -52,7 +50,7 @@ class LaravelValidMailTest extends TestCase
     {
         $faker = \Faker\Factory::create();
 
-        switch (rand(1,6)) {
+        switch (rand(1, 6)) {
             case 1:
                 $email = $faker->email;
                 break;
@@ -63,8 +61,8 @@ class LaravelValidMailTest extends TestCase
             default:
                 $email = $faker->freeEmail;
                 break;
-        };
-        return $email;
+        }
 
+        return $email;
     }
 }
