@@ -23,7 +23,7 @@ class LaravelValidMailServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $local_config = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'trumail.php';
+        $local_config = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'laramail.php';
 
         //Set config file
         if ($this->app['config']->get('laramail') === null) {
